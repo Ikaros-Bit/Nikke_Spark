@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nikke Guia - Abnormal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="abnormal-styles.css">
+</head>
+<body>
+    <header>
+        <h1>Nikke Guia</h1>
+        <p class="subtitle">Tu fuente confiable para Goddess of Victory: Nikke</p>
+    </header>
+    
+    <nav>
+        <button class="menu-btn home-btn" onclick="window.location.href='index.html'">
+            <i class="fas fa-home"></i> Página Principal
+        </button>
+        <button class="menu-btn">Abnormal</button>
+        <button class="menu-btn">Elisyon</button>
+        <button class="menu-btn">Missilis</button>
+        <button class="menu-btn">Pilgrim</button>
+        <button class="menu-btn">Tetra</button>
+    </nav>
+    
+    <div class="container">
+        <section class="gallery-section">
+            <div class="gallery-bg"></div>
+            
+            <h2 class="section-title">Galería de Nikkes Abnormal</h2>
+            
+            <div class="gallery-container">
+                <p>Las Nikkes Abnormal son unidades únicas que no pertenecen a los tres fabricantes principales. A menudo poseen habilidades especiales y diseños distintivos.</p>
+                
+                <div class="gallery-grid">
+                    <!-- Contenido de la galería -->
+                    <div class="nikke-card">
+                        <div class="nikke-image-container">
+                            <img src="https://cdn.discordapp.com/attachments/1137512630647533568/1397059442109054986/image.png?ex=6960777f&is=695f25ff&hm=365bf1b9cb3aabd271b49de9211caf512a92289164e229426969c072f3d6b42b&" alt="Nikke Abnormal Eve" class="nikke-image">
+                        </div>
+                        <div class="nikke-info">
+                            <h3 class="nikke-name">Eve</h3>
+                            <p class="nikke-type">Tipo: Attacker | Rareza: SSR</p>
+                        </div>
+                    </div>
+                    
+                    <div class="nikke-card">
+                        <div class="nikke-image-container">
+                            <img src="https://cdn.discordapp.com/attachments/1137512630647533568/1397059524996763759/image.png?ex=69607792&is=695f2612&hm=f3c0b3527f365f1c246078f4fd5ce2cd4ce84b7684983ad0a57b271a3fcc3073&" alt="Nikke Abnormal Raven" class="nikke-image">
+                        </div>
+                        <div class="nikke-info">
+                            <h3 class="nikke-name">Raven</h3>
+                            <p class="nikke-type">Tipo: Attacker | Rareza: SSR</p>
+                        </div>
+                    </div>
+                    
+                    <!-- ... resto de las tarjetas de nikke ... -->
+                    
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <!-- Modal para zoom de imágenes -->
+    <div id="imageModal" class="modal">
+        <span class="close-btn">&times;</span>
+        <img class="modal-content" id="zoomedImage">
+        <div id="modalCaption" class="modal-caption"></div>
+    </div>
+    
+    <footer>
+        <div class="footer-buttons">
+            <button class="footer-btn" onclick="window.open('https://discord.gg/https://discord.gg/3bbS7QSAeT', '_blank')">
+                <i class="fab fa-discord"></i>
+                <span>Discord HQ</span>
+            </button>
+            <button class="footer-btn" onclick="window.open('https://www.youtube.com/c/NIKKEEN', '_blank')">
+                <i class="fab fa-youtube"></i>
+                <span>YouTube</span>
+            </button>
+            <button class="footer-btn" onclick="window.open('https://discord.gg/2K9sRWZm7C', '_blank')">
+                <i class="fab fa-discord"></i>
+                <span>Discord Luz</span>
+            </button>
+            <button class="footer-btn" onclick="window.open('https://www.prydwen.gg/nikke/tier-list/', '_blank')">
+                <i class="fas fa-list-ol"></i>
+                <span>Tierlist</span>
+            </button>
+        </div>
+    </footer>
+
+    <script src="common-script.js"></script>
+    <script src="abnormal-script.js"></script>
+</body>
+</html>

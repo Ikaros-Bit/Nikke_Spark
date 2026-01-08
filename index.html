@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nikke Guia</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #2D1B69 0%, #4A2C9C 100%);
+            color: #FFFFFF;
+            min-height: 100vh;
+            padding-bottom: 80px;
+        }
+        
+        header {
+            background-color: rgba(63, 38, 132, 0.9);
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+        
+        h1 {
+            font-size: 3rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            background: linear-gradient(45deg, #9370DB, #D8BFD8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            color: #D8BFD8;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        
+        nav {
+            background: linear-gradient(90deg, #5E3FBE 0%, #7B5DD6 100%);
+            padding: 15px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .menu-btn {
+            background-color: #9370DB;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+        
+        .menu-btn:hover {
+            background-color: #D8BFD8;
+            color: #4A2C9C;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+        
+        .news-section {
+            padding: 25px;
+            border-radius: 15px;
+            margin-top: 30px;
+            position: relative;
+            overflow: hidden;
+            
+            /* VARIABLE PARA LA IMAGEN DE FONDO - CAMBIA ESTA URL */
+            --news-bg-image: url('https://media1.tenor.com/m/zWAd_JbfyeAAAAAC/crown-nikke-goddess-of-victory.gif');
+        }
+        
+        .news-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                linear-gradient(rgba(63, 38, 132, 0.85), rgba(63, 38, 132, 0.95)),
+                var(--news-bg-image) center/cover;
+            z-index: -1;
+            border-radius: 15px;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #D8BFD8;
+            font-size: 2rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, #9370DB, #D8BFD8);
+            border-radius: 3px;
+        }
+        
+        .facebook-container {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 20px;
+            backdrop-filter: blur(5px);
+        }
+        
+        .facebook-placeholder {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        
+        .facebook-placeholder p {
+            margin-bottom: 20px;
+            color: #D8BFD8;
+        }
+        
+        .fb-link {
+            display: inline-block;
+            background: linear-gradient(90deg, #3b5998, #1877f2);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+        
+        .fb-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+        }
+        
+        .instructions {
+            background-color: rgba(63, 38, 132, 0.8);
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        
+        .instructions h3 {
+            margin-bottom: 10px;
+            color: #D8BFD8;
+        }
+        
+        .instructions ol {
+            padding-left: 20px;
+            margin-top: 10px;
+        }
+        
+        .instructions li {
+            margin-bottom: 8px;
+            color: #D8BFD8;
+        }
+        
+        .code-block {
+            background-color: rgba(0, 0, 0, 0.3);
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-family: monospace;
+            overflow-x: auto;
+            white-space: pre;
+            color: #D8BFD8;
+        }
+        
+        footer {
+            background-color: rgba(63, 38, 132, 0.9);
+            padding: 25px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.3);
+        }
+        
+        .footer-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .footer-btn {
+            background: linear-gradient(90deg, #7B5DD6 0%, #9370DB 100%);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .footer-btn:hover {
+            background: linear-gradient(90deg, #9370DB 0%, #D8BFD8 100%);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+        
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .menu-btn {
+                width: 80%;
+                margin-bottom: 10px;
+            }
+            
+            .footer-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .footer-btn {
+                width: 80%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Nikke Guia</h1>
+        <p class="subtitle">Tu fuente confiable para Goddess of Victory: Nikke</p>
+    </header>
+    
+    <nav>
+        <button class="menu-btn">Abnormal</button>
+        <button class="menu-btn">Elisyon</button>
+        <button class="menu-btn">Missilis</button>
+        <button class="menu-btn">Pilgrim</button>
+        <button class="menu-btn">Tetra</button>
+    </nav>
+    
+    <div class="container">
+        <section class="news-section">
+            <div class="news-bg"></div>
+            
+            <h2 class="section-title">Noticias de Nikke</h2>
+            
+            <div class="facebook-container">
+                <h3>Últimas publicaciones de Facebook</h3>
+                <p>Sigue la página oficial de Nikke: Goddess of Victory para estar al día con las últimas noticias.</p>
+                
+                <div class="facebook-placeholder">
+                    <p>Para ver las publicaciones de Facebook, visita la página oficial:</p>
+                    <a href="https://www.facebook.com/NIKKE.en" class="fb-link" target="_blank">
+                        <i class="fab fa-facebook"></i> Ver página de Facebook
+                    </a>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <footer>
+        <div class="footer-buttons">
+            <button class="footer-btn" onclick="window.open('https://discord.gg/https://discord.gg/3bbS7QSAeT', '_blank')">
+                <i class="fab fa-discord"></i>
+                <span>Discord HQ</span>
+            </button>
+            <button class="footer-btn" onclick="window.open('https://www.youtube.com/c/NIKKEEN', '_blank')">
+                <i class="fab fa-youtube"></i>
+                <span>YouTube</span>
+            </button>
+            <button class="footer-btn" onclick="window.open('https://discord.gg/2K9sRWZm7C', '_blank')">
+                <i class="fab fa-discord"></i>
+                <span>YouTube</span>
+            </button>
+            <button class="footer-btn" onclick="window.open('https://www.prydwen.gg/nikke/tier-list/', '_blank')">
+                <i class="fas fa-list-ol"></i>
+                <span>Tierlist</span>
+            </button>
+        </div>
+    </footer>
+
+    <script>
+        // Efectos interactivos para los botones
+        document.querySelectorAll('.menu-btn, .footer-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                this.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    this.style.transform = '';
+                }, 200);
+            });
+        });
+        
+        // Simular carga de contenido
+        document.addEventListener('DOMContentLoaded', function() {
+            document.body.style.opacity = 0;
+            document.body.style.transition = 'opacity 1s ease-in';
+            
+            setTimeout(function() {
+                document.body.style.opacity = 1;
+            }, 100);
+        });
+    </script>
+</body>
+</html>
